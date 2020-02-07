@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'matches')}">
+<body>
+  <div class="jumbotron text-center">
+    <div class="container">
+      <h1>Bear Link</h1>
+      <p>MATCHES: COMING SOON</p>
+
+      <form class="chatmatch">
+          <img src="/src/main/resources/templates/grey-person-girl.PNG" alt="photo-image" style="float: left;">
+          <br><label>User Name: </label><label>someone</label><br>
+          <br><label>Phone Number: </label><label>555-555-5555</label><br>
+          <br><label>Email Address: </label><label>someone@somewhere.com</label><br>
+      </form>
+
+      <form class="chatmatch">
+          <img src="/images/grey-person-girl.png" alt="photo-image" style="float: left;">
+          <br><label>User Name: </label><label>someone</label><br>
+          <br><label>Phone Number: </label><label>555-555-5555</label><br>
+          <br><label>Email Address: </label><label>someone@somewhere.com</label><br>
+      </form>
+
+      <form class="chatmatch">
+          <img src="grey-person-girl.png" alt="photo-image" style="float: left;">
+          <br><label>User Name: </label><label>someone</label><br>
+          <br><label>Phone Number: </label><label>555-555-5555</label><br>
+          <br><label>Email Address: </label><label>someone@somewhere.com</label><br>
+      </form>
+
+      <form class="chatmatch">
+          <img src="grey-person-guy.png" alt="photo-image" style="float: left;">
+          <br><label>User Name: </label><label>someone</label><br>
+          <br><label>Phone Number: </label><label>555-555-5555</label><br>
+          <br><label>Email Address: </label><label>someone@somewhere.com</label><br>
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <form class="loginform">
+    <!--
+    <br><label>Email Address</label><br>
+    <input type="email" name="loginemail" placeholder="someone@somewhere.com"><br>
+    -->
+    <br><label>Message Recipient</label><br>
+    <input type="text" name="msgrecip" placeholder="someone"><br>
+    <br><label>Type Message</label><br>
+    <textarea rows="20" cols="40">
+    </textarea>
+    <br><button>Send Message</button><br>
+    <br><label>Messages Posted</label><br>
+    <textarea rows="40" cols="40">
+    </textarea>
+
+</form>
+
+<form class="chatterbox">
+    <img src="~/images/grey-person-guy.png" alt="photo-image" style="float: left;">
+    <br><label>User Name: </label><label>someone</label><br>
+    <br><label>Phone Number: </label><label>555-555-5555 </label><br>
+    <br><label>Email Address: </label><label>someone@somewhere.com </label><br>
+</form>
+
+<form class="chatterbox">
+    <img src="~/images/grey-person-girl.png" alt="photo-image" style="float: left;">
+    <br><label>User Name: </label><label>someone</label><br>
+    <br><label>Phone Number: </label><label>555-555-5555 </label><br>
+    <br><label>Email Address: </label><label>someone@somewhere.com </label><br>
+</form>
+
+<form class="chatterbox">
+    <img src="grey-person-girl.png" alt="photo-image" style="float: left;">
+    <br><label>User Name: </label><label>someone</label><br>
+    <br><label>Phone Number: </label><label>555-555-5555 </label><br>
+    <br><label>Email Address: </label><label>someone@somewhere.com </label><br>
+</form>
+
+<form class="chatterbox">
+    <img src="grey-person-guy.png" alt="photo-image" style="float: left;">
+    <br><label>User Name: </label><label>someone</label><br>
+    <br><label>Phone Number: </label><label>555-555-5555 </label><br>
+    <br><label>Email Address: </label><label>someone@somewhere.com </label><br>
+</form>
+
+    </div>
+  </div>
+
+
+  <div class="jumbotron text-center" th:fragment="footer">
+    <a type="button" class="btn btn-lg btn-primary" href="/"><span class="glyphicon glyphicon-home"></span> HOME</a>
+    <a type="button" class="btn btn-lg btn-primary" href="/profile"><span class="glyphicon glyphicon-user"></span> PROFILE</a>
+    <a type="button" class="btn btn-lg btn-primary" href="/matches"><span class="glyphicon glyphicon-heart"></span> MATCHES</a>
+    <a type="button" class="btn btn-lg btn-primary" href="/search"><span class="glyphicon glyphicon-search"></span> SEARCH</a>
+    <a type="button" class="btn btn-lg btn-primary" href="/faq"><span class="glyphicon glyphicon-list"></span> FAQ</a>
+
+    <p>&copy; 2020 Bear Link</p>
+  </div>
+
+
+</body>
+</html>
+
+
+{% endblock %}

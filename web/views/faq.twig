@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'faq')}">
+<body>
+  <div class="jumbotron text-center">
+    <div class="container">
+      <h1>Bear Link</h1>
+      <p>FAQ</p>
+
+<form class="displayfaq">
+
+    <p>Question 1:</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p><br>
+    <p>Question 2:</p>
+    <p>Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas.</p><br>
+    <p>Question 3:</p>
+    <p>Vitae scelerisque enim ligula venenatis dolor.</p><br>
+    <p>Question 4:</p>
+    <p>Maecenas nisl est, ultrices nec congue ege, auctor vitae massa.</p><br>
+    <p>Question 5:</p>
+    <p>Fusce luctus vestibulum augue ut aliquet dignissim ac.</p><br>
+    <p>Question 6:</p>
+    <p>Mauris ante ligula, facilisis sed ornare eu, lobortis in odio.</p><br>
+    <p>Question 7:</p>
+    <p>Praesent convallis urna a lacus interdum ut hendrerit risus.</p><br>
+    <p>Question 8:</p>
+    <p>Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim.</p><br>
+    <p>Question 9:</p>
+    <p>In at libero sed nunc venenatis imperdiet sed ornare turpis.</p><br>
+    <p>Question 10:</p>
+    <p>Donec vitae dui eget tellus gravida venenatis. Cras ac leo purus</p><br>
+    <p>Question 11:</p>
+    <p>Integer fringilla congue eros non fermentum. Mauris quis diam velit</p><br>
+
+</form>
+
+    </div>
+  </div>
+
+
+  <div class="jumbotron text-center" th:fragment="footer">
+    <a type="button" class="btn btn-lg btn-primary" href="/"><span class="glyphicon glyphicon-home"></span> HOME</a>
+    <a type="button" class="btn btn-lg btn-primary" href="/profile"><span class="glyphicon glyphicon-user"></span> PROFILE</a>
+    <a type="button" class="btn btn-lg btn-primary" href="/matches"><span class="glyphicon glyphicon-heart"></span> MATCHES</a>
+    <a type="button" class="btn btn-lg btn-primary" href="/search"><span class="glyphicon glyphicon-search"></span> SEARCH</a>
+    <a type="button" class="btn btn-lg btn-primary" href="/faq"><span class="glyphicon glyphicon-list"></span> FAQ</a>
+
+    <p>&copy; 2020 Bear Link</p>
+  </div>
+
+
+</body>
+</html>
+
+{% endblock %}

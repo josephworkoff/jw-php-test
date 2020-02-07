@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'search')}">
+<body>
+  <div class="jumbotron text-center">
+    <div class="container">
+      <h1>Bear Link</h1>
+      <p>SEARCH: COMING SOON</p>
+
+<form class="chatmatch">
+    <img src="grey-person-guy.png" alt="photo-image" style="float: left;">
+    <br><label>User Name: </label><label>someone</label><br>
+    <br><label>Phone Number: </label><label>555-555-5555</label><br>
+    <br><label>Email Address: </label><label>someone@somewhere.com</label><br>
+</form>
+
+<form class="chatmatch">
+    <img src="grey-person-girl.png" alt="photo-image" style="float: left;">
+    <br><label>User Name: </label><label>someone</label><br>
+    <br><label>Phone Number: </label><label>555-555-5555</label><br>
+    <br><label>Email Address: </label><label>someone@somewhere.com</label><br>
+</form>
+
+<form class="chatmatch">
+    <img src="grey-person-girl.png" alt="photo-image" style="float: left;">
+    <br><label>User Name: </label><label>someone</label><br>
+    <br><label>Phone Number: </label><label>555-555-5555</label><br>
+    <br><label>Email Address: </label><label>someone@somewhere.com</label><br>
+</form>
+
+<form class="chatmatch">
+    <img src="grey-person-guy.png" alt="photo-image" style="float: left;">
+    <br><label>User Name: </label><label>someone</label><br>
+    <br><label>Phone Number: </label><label>555-555-5555</label><br>
+    <br><label>Email Address: </label><label>someone@somewhere.com</label><br>
+</form>
+
+    </div>
+  </div>
+
+
+  <div class="jumbotron text-center" th:fragment="footer">
+    <a type="button" class="btn btn-lg btn-primary" href="/"><span class="glyphicon glyphicon-home"></span> HOME</a>
+    <a type="button" class="btn btn-lg btn-primary" href="/profile"><span class="glyphicon glyphicon-user"></span> PROFILE</a>
+    <a type="button" class="btn btn-lg btn-primary" href="/matches"><span class="glyphicon glyphicon-heart"></span> MATCHES</a>
+    <a type="button" class="btn btn-lg btn-primary" href="/search"><span class="glyphicon glyphicon-search"></span> SEARCH</a>
+    <a type="button" class="btn btn-lg btn-primary" href="/faq"><span class="glyphicon glyphicon-list"></span> FAQ</a>
+
+    <p>&copy; 2020 Bear Link</p>
+  </div>
+
+
+</body>
+</html>
+
+
+{% endblock %}
