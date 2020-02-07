@@ -32,7 +32,7 @@
             //     echo 'Connection status bad';
             // }  
 
-            session_start();
+            //session_start();
             if (!isset($_SESSION['id'])){
                 echo "not logged in";
             }
@@ -105,7 +105,7 @@
                         <form id=\"privacy\" class=\"aboutyourself\" method=\"post\" action=\"updateProfile.php\">
                         <br><label>Profile is currently $privacy:</label><br>
                         <br><label>Click to toggle Privacy:</label><br>
-                        <input type=\"hidden\" name=\"form\" value=\"private\"/>
+                        <input type=\"hidden\" name=\"form\" value=\"privacy\"/>
                         <input type=\"hidden\" name=\"uid\" value=\"$uid\"/>
                         <br><button>Toggle Private</button><br>
                         </form>

@@ -29,24 +29,27 @@ if(array_key_exists('form', $_POST)){
         }
     }
     elseif ($_POST['form'] == "privacy") {
-        echo($_POST['displaybio']);
-        $result = pg_prepare($conn, "updateBio", 'UPDATE user_profiles SET bio=$1 WHERE id=$2');
+        $result = pg_prepare($conn, "fetchPrivacy", 'SELECT private FROM users WHERE id=$1' );
         $uid = (int)$_POST['uid'];
-        $result = pg_execute($conn, "updateBio", array($_POST['displaybio'],$uid));
+        $result = pg_execute($conn, "fetchPrivacy", array($uid));
 
-        if (!$result){ //user doesn't exist
-            echo "<p>Bio update failed.</p>"; //replace this with the user's profile if get is empty
+        if (!$result){
+            echo "<p>Failed to get current privacy setting.</p>"; //replace this with the user's profile if get is empty
+        }
+
+        $row = pg_fetch_row($result);
+
+        $privacy = ( ( $row[0] == 'f') ? 't' : 'f');
+
+        $result = pg_prepare($conn, "togglePriv", 'UPDATE users SET private=$1 WHERE id=$2');
+        $result = pg_execute($conn, "togglePriv", array($privacy,$uid));
+
+        if (!$result){
+            echo "<p>Failed to change privacy setting.</p>"; //replace this with the user's profile if get is empty
         }
         else{
-            header('Location: /profile');
+            header('Location: /profile.php');
         }
     }
 }
-
-
-
-//header('Location: /profile');
-
-
-
 ?>

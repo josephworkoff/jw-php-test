@@ -10,12 +10,33 @@
       <h1>Bear Link</h1>
       <p>CREATE</p>
       <form class="createaccount" method="post" action="createAccount.php">
+
+        <!-- Function makes it so only letters are able to be entered.
+        -->
+        <script>
+        function lettersOnly(input){
+          var regex = /[^a-z]/gi;
+          input.value = input.value.replace(regex, "");
+        }
+        </script>
+
           <br><label>First Name</label><br>
-          <input type="text" name="createfn" placeholder="First Name"><br>
+          <input type="text" name="createfn" placeholder="First Name" onkeyup="lettersOnly(this)"><br>
           <br><label>Last Name</label><br>
-          <input type="text" name="createln" placeholder="Last Name"><br>
+          <input type="text" name="createln" placeholder="Last Name" onkeyup="lettersOnly(this)"><br>
+          <!--
+                           This function makes it so only numbers are able to be entered
+                         -->
+                           <script>
+                           function numbersOnly(input){
+                             var regex = /[^0-9,-]/g;
+                             input.value = input.value.replace(regex, "");
+                           }
+                           </script>
+
+
           <br><label>Phone Number</label><br>
-          <input type="tel" name="createpn" placeholder="###-###-####"><br>
+          <input type="tel" name="createpn" placeholder="###-###-####" onkeyup="numbersOnly(this)"><br>
           <br><label>Email Address</label><br>
           <input type="email" name="createemail" placeholder="someone@somewhere.com"><br>
           <br><label>Password</label><br>
