@@ -17,14 +17,14 @@
 $conn = pg_connect(getenv("DATABASE_URL"));
 
 if(isset($_POST['uid'])){
-  $result = pg_prepare($conn, "deleteUser", 'DELETE FROM users WHERE id=$1');
+  $result = pg_prepare($conn, "updateUser", 'UPDATE users SET first_name=$1, last_name=$2, phone=$3, email=$4 WHERE id=$5');
   $uid = (int)$_POST['uid'];
-  $result = pg_execute($conn, "deleteUser", array($uid));
+  $result = pg_execute($conn, "updateUser", array($_POST['updatefn'], $_POST['updateln'], $_POST['updatepn'],$_POST['updateemail'],$uid));
 
-echo "<p>User associated with User ID: '$uid' has been deleted</p>";
+echo "<p>User associated with User ID: '$uid' has been updated</p>";
 }
 else {
-  echo "User not deleted";
+  echo "User information not updateed";
 }
 
 

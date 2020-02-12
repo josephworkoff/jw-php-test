@@ -13,7 +13,7 @@ if(array_key_exists('form', $_POST)){
             echo "<p>User update failed.</p>"; //replace this with the user's profile if get is empty
         }
         else{
-            header('Location: /profile');
+            header("Location: /profile.php?id=$uid");
         }
     }
     elseif ($_POST['form'] == "bio") {
@@ -25,7 +25,7 @@ if(array_key_exists('form', $_POST)){
             echo "<p>Bio update failed.</p>"; //replace this with the user's profile if get is empty
         }
         else{
-            header('Location: /profile');
+            header("Location: /profile.php?id=$uid");
         }
     }
     elseif ($_POST['form'] == "privacy") {
@@ -48,7 +48,28 @@ if(array_key_exists('form', $_POST)){
             echo "<p>Failed to change privacy setting.</p>"; //replace this with the user's profile if get is empty
         }
         else{
-            header('Location: /profile.php');
+            header("Location: /profile.php?id=$uid");
+        }
+    }
+    elseif ($_POST['form'] == "delete") {
+        $result = pg_prepare($conn, "deleteUser", 'DELETE FROM users WHERE id=$1');
+        $uid = (int)$_POST['uid'];
+        $result = pg_execute($conn, "deleteUser", array($uid));
+
+        if (!$result){ //user doesn't exist
+            echo "<p>Failed to delete account.</p>"; //replace this with the user's profile if get is empty
+        }
+        else{
+            $result = pg_prepare($conn, "deleteBio", 'DELETE FROM user_profiles WHERE id=$1');
+            $result = pg_execute($conn, "deleteBio", array($uid));
+
+            if($_SESSION['id'] == $uid){
+                header("Location: /logout.php");
+            }
+            else{
+                header("Location: /");
+            }
+            
         }
     }
 }
